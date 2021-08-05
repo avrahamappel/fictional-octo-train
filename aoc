@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+case ARGV[0]
+when 'run'
+  require './run'
+  run(ARGV[1])
+when 'test'
+  require './test'
+  test(ARGV[1])
+when 'edit'
+  `vim -o #{ARGV[1]}/test.json #{ARGV[1]}/code.rb`
+else
+  exit 1
+end
